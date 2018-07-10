@@ -1,0 +1,64 @@
+﻿@using Dz3zad1.Models
+@model Dz3zad1.Models.ModelUser
+@{
+    Layout = null;
+    IEnumerable<SelectListItem> Roles = ViewBag.item;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css" />
+    <title>Index</title>
+</head>
+<body>
+<div class="menu">
+    @Html.ActionLink("Добавить пользователя","Index")
+    @Html.ActionLink("Таблица пользователей","ShowTable")
+    @Html.RouteLink("Добавить роль", new{controller="Role",action="Index"})
+    @Html.RouteLink("Таблица ролей", new{controller="Role", action="TableRole"})
+</div>
+<div class="div_h1">
+    <h1>Добавить поьзователя</h1>
+</div>
+<div class="forma_user">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <div class="section">
+            <p>Имя*</p>
+            <div class="Text">@Html.TextBoxFor(x => x.FirstName)</div>
+        </div>
+        <div class="section">
+            <p>Фамилия*</p> 
+            <div class="Text">@Html.TextBoxFor(x => x.LastName)</div>
+        </div> 
+        <div class="section">
+            <p>Логин* </p>
+            <div class="Text">@Html.TextBoxFor(x => x.Login)</div>
+        </div> 
+        <div class="section">
+            <p>Пароль* </p>
+            <div class="Text">@Html.TextBoxFor(x => x.Passvord)</div>
+        </div>
+        <div class="section">
+            <p>Почта* </p>
+            <div class="Text">@Html.TextBoxFor(x => x.Email)</div>
+        </div>
+        <div class="section">
+            <p>Телефон* </p>
+            <div class="Text">@Html.TextBoxFor(x => x.Phone)</div>
+        </div>
+        <div class="section">
+            <p>Роль* </p>
+            <div class="Text">@Html.DropDownListFor(x => x.role, Roles)</div>
+        </div>
+        <div class="button">
+            <input type="submit" Value="Добавить" /></div>
+            }
+        </div>
+</body>
+</html>
+

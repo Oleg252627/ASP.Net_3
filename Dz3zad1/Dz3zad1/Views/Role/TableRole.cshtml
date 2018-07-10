@@ -1,0 +1,45 @@
+﻿@using Dz3zad1.Models
+@{
+    Layout = null;
+    IEnumerable<Role> List_rol = ViewBag.Roles;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css"/>
+    <title>TableRole</title>
+</head>
+<body>
+<div class="menu">
+    @Html.RouteLink("Добавить пользователя", new { controller = "Home", action = "Index" })
+    @Html.RouteLink("Таблица пользователей", new { controller = "Home", action = "ShowTable" })
+    @Html.ActionLink("Добавить роль", "Index")
+    @Html.ActionLink("Таблица ролей", "TableRole")
+</div>
+<div class="div_h1">
+    <h1>Таблица ролей</h1>
+</div>
+<div class="div_table">
+    <table border="1">
+        <tr>
+            <td class="td_color">id</td>
+            <td class="td_color">Имя роли</td>
+            <td class="td_color">Изменить</td>
+            <td class="td_color">Удалить</td>
+        </tr>
+        @foreach (Role VARIABLE in List_rol)
+        {
+            <tr>
+                <td>@VARIABLE.Id</td>
+                <td>@VARIABLE.Name</td>
+                <td>@Html.ActionLink("Изменить", "RenameRole", new { VARIABLE.Id }, new { @class = "link_ol" })</td>
+                <td>@Html.ActionLink("Удалить", "DeleteRole", new { VARIABLE.Id }, new { @class = "link_ol" })</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>

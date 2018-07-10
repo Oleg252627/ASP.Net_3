@@ -1,0 +1,43 @@
+﻿@using Dz3zad1.Models
+@model Dz3zad1.Models.ModelRole
+@{
+    Layout = null;
+    Role role = ViewBag.Role;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css"/>
+    <title>RenameRole</title>
+</head>
+<body>
+<div class="menu">
+    @Html.RouteLink("Добавить пользователя", new { controller="Home",action="Index" })
+    @Html.RouteLink("Таблица пользователей", new { controller = "Home", action = "ShowTable" })
+    @Html.ActionLink("Добавить роль", "Index")
+    @Html.ActionLink("Таблица ролей", "TableRole")
+</div>
+<div class="div_h1">
+    <h1>Редактировать роль</h1>
+</div>
+<div class="forma_user">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        if (role != null)
+        {
+            <div class="section">
+                <p>Имя роли* </p>
+                <div class="Text">@Html.TextBox("Name", role.Name)</div>
+            </div>
+            <div class="button">
+                <input type="submit" name="@role.Id" value="Переиминовать" />
+            </div>
+        }
+    }
+</div>
+</body>
+</html>

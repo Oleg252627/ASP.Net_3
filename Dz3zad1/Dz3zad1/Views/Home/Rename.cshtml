@@ -1,0 +1,85 @@
+﻿@using Dz3zad1.Models;
+@model Dz3zad1.Models.ModelUser
+@{
+    Layout = null;
+    User User = ViewBag.user;
+    IEnumerable<SelectListItem> item = ViewBag.Item;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css" />
+    <title>Rename</title>
+</head>
+<body>
+    
+<div class="menu">
+    @Html.ActionLink("Добавить пользователя", "Index")
+    @Html.ActionLink("Таблица пользователей", "ShowTable")
+    @Html.RouteLink("Добавить роль", new {controller = "Role", action = "Index"})
+    @Html.RouteLink("Таблица ролей", new {controller = "Role", action = "TableRole"})
+</div>
+<div class="div_h1">
+    <h1>Редактировать поьзователя</h1>
+</div>
+<div class="forma_user">
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+         if (User != null)
+         {
+             <div class="section">
+                 <p>Имя: </p>
+                 <div class="Text">
+                     @Html.TextBox("FirstName", User?.FirstName)
+                 </div>
+             </div>
+             <div class="section">
+                 <p>Фамилия: </p>
+                 <div class="Text">
+                     @Html.TextBox("LastName", User?.LastName)
+                 </div>
+             </div>
+             <div class="section">
+                 <p>Логин: </p>
+                 <div class="Text">
+                     @Html.TextBox("Login", User?.Login)
+                 </div>
+             </div>
+             <div class="section">
+                 <p>Пароль: </p>
+                 <div class="Text">
+                     @Html.TextBox("Passvord", User?.Passvord)
+                 </div>
+             </div>
+             <div class="section">
+                 <p>Почта: </p>
+                 <div class="Text">
+                     @Html.TextBox("Email", User?.Email)
+                 </div>
+             </div>
+             <div class="section">
+                 <p>Телефон: </p>
+                 <div class="Text">
+                     @Html.TextBox("Phone", User?.Phone)
+                 </div>
+             </div>
+             <div class="section">
+                 <p>Роль: </p>
+                 <div class="Text">
+                     @Html.DropDownListFor(x => x.role, item)
+                 </div>
+             </div>
+             <div class="button">
+                 <input type="submit" name="@User.Id" value="Изменить" />
+             </div>
+         }
+        
+     }
+        </div>
+</body>
+</html>

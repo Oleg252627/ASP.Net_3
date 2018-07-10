@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+    Exception ex = ViewBag.Exseption;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+<div>
+    @ex?.Message
+</div>
+</body>
+</html>

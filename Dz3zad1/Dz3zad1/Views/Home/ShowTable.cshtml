@@ -1,0 +1,47 @@
+﻿@using Dz3zad1.Models;
+@{
+    Layout = null;
+    IEnumerable<User> users = ViewBag.listUser;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css" />
+    <title>ShowTable</title>
+</head>
+<body>
+<div class="menu">
+    @Html.ActionLink("Добавить пользователя","Index")
+    @Html.ActionLink("Таблица пользователей","ShowTable")
+    @Html.RouteLink("Добавить роль", new{controller="Role",action="Index"})
+    @Html.RouteLink("Таблица ролей", new{controller="Role", action="TableRole"})
+</div>
+<div class="div_h1">
+    <h1>Таблица пользователей</h1>
+</div>
+<div class="div_table">
+    <table border="1">
+        <tr>
+            <td class="td_color">id</td>
+            <td class="td_color">Логин</td>
+            <td class="td_color">Подробнее</td>
+            <td class="td_color">Изменить</td>
+            <td class="td_color">Удалить</td>
+        </tr>
+        @foreach (User VARIABLE in users)
+        {
+            <tr>
+                <td>@VARIABLE.Id</td>
+                <td>@VARIABLE.Login</td>
+                <td>@Html.ActionLink("Подробнее", "Edit", new {VARIABLE.Id}, new{@class= "link_ol" })</td>
+                <td>@Html.ActionLink("Изменить", "Rename", new {VARIABLE.Id}, new { @class = "link_ol" })</td>
+                <td>@Html.ActionLink("Удалить", "DeleteUser", new {VARIABLE.Id}, new { @class = "link_ol" })</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿@model Dz3zad1.Models.ModelRole
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css"/>
+    <title>Index</title>
+</head>
+<body>
+<div class="menu">
+    @Html.RouteLink("Добавить пользователя", new { controller="Home",action="Index" })
+    @Html.RouteLink("Таблица пользователей", new { controller = "Home", action = "ShowTable" })
+    @Html.ActionLink("Добавить роль", "Index")
+    @Html.ActionLink("Таблица ролей", "TableRole")
+</div>
+<div class="div_h1">
+    <h1>Добавить роль</h1>
+</div>
+<div class="forma_user">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <div class="section">
+            <p>Имя роли* </p>
+            <div class="Text">@Html.TextBoxFor(x => x.Name)</div>
+        </div>
+        <div class="button">
+            <input type="submit" value="Добавить роль" />
+        </div>
+            }
+        </div>
+</body>
+</html>

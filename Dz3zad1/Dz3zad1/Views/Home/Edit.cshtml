@@ -1,0 +1,41 @@
+﻿@using Dz3zad1.Models;
+@{
+    Layout = null;
+    User User = ViewBag.user;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Style.css" />
+    <title>Edit</title>
+</head>
+<body>
+<div class="menu">
+    @Html.ActionLink("Добавить пользователя","Index")
+    @Html.ActionLink("Таблица пользователей","ShowTable")
+    @Html.RouteLink("Добавить роль", new{controller="Role",action="Index"})
+    @Html.RouteLink("Таблица ролей", new{controller="Role", action="TableRole"})
+</div>
+<div>
+    @if (User != null)
+    {
+        <div class="div_h1">
+            <h1>@User.FirstName @User.LastName</h1>
+        </div>
+        <div class="div_table"style="border: 1px solid #7bc4ca">
+            <h3>Логин: @User.Login</h3>
+            <h3>Почта: @User.Email</h3>
+            <h3>Пароль: @User.Passvord</h3>
+            <h3>Телефон: @User.Phone</h3>
+            @if (User.Role != null)
+            {
+            <h3>Роль: @User.Role.Name</h3>
+            }
+        </div>
+    }
+</div>
+</body>
+</html>

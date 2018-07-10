@@ -1,0 +1,140 @@
+﻿body {
+}
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+.validation-summary-errors ul {
+    list-style: none;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+.menu {
+    width: 100%;
+    background-color: black;
+    display: flex;
+}
+.menu a {
+    display: block;
+    padding: 17px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.menu a:hover {
+    color: #7bc4ca;
+}
+
+.div_h1 {
+    margin: 20px auto;
+    border-bottom: 2px solid #7bc4ca;
+    width: 420px;
+}
+.div_h1 h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.forma_user {
+    width: 350px;
+    margin: 10px auto;
+    background-color: #287f89;
+}
+.forma_user form {
+    display: block;
+    width: 100%;
+    padding: 30px 0;
+}
+.forma_user p {
+    color: white;
+    margin: 0;
+}
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.section p {
+    display: block;
+    margin-left: 20px;
+    font-size: 18px;
+}
+.Text {
+    margin-right: 20px;
+}
+.Text input {
+    width: 200px;
+    font-size: 15px;
+}
+.button {
+    width: 200px;
+    margin: 30px auto 0;
+}
+.button input {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #7bc4ca;
+    color: white;
+    transition: 0.5s;
+    border-style: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+.button input:hover {
+    background-color: white;
+    color: #7bc4ca;
+}
+.div_table {
+    width: 500px;
+    margin: 30px auto;
+}
+.div_table table {
+    width: 100%;
+    border: 1px solid #287f89;
+    text-align: center;
+}
+.td_color {
+    background-color: #287f89;
+    color: white;
+}
+.link_ol {
+    display: block;
+    width: 80%;
+    padding: 4px;
+    border: 1px solid #7bc4ca;
+    text-align: center;
+    color: black;
+    margin: 2px auto;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.link_ol:hover {
+    background-color: #7bc4ca;
+    color: white;
+}
+.div_table h3 {
+    display: block;
+    width: 100%;
+    margin-left: 20px;
+}
